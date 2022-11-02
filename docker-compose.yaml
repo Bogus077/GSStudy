@@ -1,7 +1,7 @@
 version: '2.0'
 services:
   frontend:
-    container_name: STUDY-[front]-react
+    container_name: STUDY-front-react
     image: node:latest
     volumes:
       - /etc/letsencrypt/:/etc/letsencrypt/
@@ -15,7 +15,7 @@ services:
         'cd /app && yarn install && yarn build && npm i serve -g && serve -s build',
       ]
   nginx:
-    container_name: STUDY-[front]-nginx
+    container_name: STUDY-front-nginx
     image: nginx:alpine
     tty: true
     depends_on:
